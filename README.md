@@ -1,12 +1,6 @@
-# Skeleton Starter for Vaadin
+# Vaadin Tutorial Solutions for Vaadin 22
 
-This project can be used as a starting point to create your own Vaadin application.
-It has the necessary dependencies and files to help you get started.
-
-The best way to use it is via [vaadin.com/start](https://vaadin.com/start) - you can get only the necessary parts and choose the package naming you want to use.
-There is also a [getting started tutorial](https://vaadin.com/tutorials/getting-started-with-flow) based on this project.
-
-To access it directly from github, clone the repository and import the project to the IDE of your choice as a Maven project. You need to have Java 8 or 11 installed.
+This project is the solutions to the Vaadin 14 tutorials adapted to run in Vaadin 22 environment.
 
 Run using `mvn jetty:run` and open [http://localhost:8080](http://localhost:8080) in the browser.
 
@@ -25,6 +19,3 @@ Profile `it` adds the following parameters to run integration tests:
 -Dwebdriver.chrome.driver=path_to_driver
 -Dcom.vaadin.testbench.Parameters.runLocally=chrome
 ```
-
-For a full Vaadin application example, there are more choices available also from [vaadin.com/start](https://vaadin.com/start) page.
-
