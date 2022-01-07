@@ -26,6 +26,11 @@ public class PersonService {
 		return filtered;
 	}
 
+	public Stream<Person> getPersons(AgeGroup filter){
+		ensureTestData();
+		return persons.stream().filter(p -> filter(p, filter));
+	}
+
 	public int totalSize(){
 		ensureTestData();
 		return persons.size();
@@ -72,6 +77,29 @@ public class PersonService {
 		final long count = persons.stream().filter(p -> filter(p, filter)).skip(offset).limit(limit).count();
 
 		return (int) count;
+	}
+
+	public List<Person> getAllPersons() {
+		if (persons == null) {
+
+			final Random r = new Random();
+
+			persons = new ArrayList<Person>();
+			for (int i = 0; i < 100; i++) {
+				final Person person = new Person();
+				person.setName(firstName[r.nextInt(firstName.length)] + " " + lastName[r.nextInt(lastName.length)]);
+				person.setAge(r.nextInt(50) + 18);
+				person.setEmail(person.getName().replaceAll(" ", ".") + "@example.com");
+
+				LocalDate date = LocalDate.now().minusYears(person.getAge());
+				date = date.withMonth(r.nextInt(12) + 1);
+				date = date.withDayOfMonth(r.nextInt(28) + 1);
+				person.setBirthday(date);
+
+				persons.add(person);
+			}
+		}
+		return persons;
 	}
 
 }
