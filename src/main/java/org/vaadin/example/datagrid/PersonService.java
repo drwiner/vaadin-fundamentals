@@ -21,10 +21,20 @@ public class PersonService {
 	public Stream<Person> getPersons(int offset, int limit, AgeGroup filter) {
 		ensureTestData();
 
+
 		final Stream<Person> filtered = persons.stream().filter(p -> filter(p, filter)).skip(offset).limit(limit);
 
 		return filtered;
 	}
+
+//	public Stream<Person> getPersons(int offset, int limit, AgeGroup filter, PersonDataProvider.SortingInfo sortingInfo) {
+//		ensureTestData();
+//
+//
+//		final Stream<Person> filtered = persons.stream().filter(p -> filter(p, filter)).skip(offset).limit(limit).sorted(sortingInfo);
+//
+//		return filtered;
+//	}
 
 	public Stream<Person> getPersons(AgeGroup filter){
 		ensureTestData();
@@ -102,4 +112,14 @@ public class PersonService {
 		return persons;
 	}
 
+	public Stream<Person> getPersons(int offset, int limit, AgeGroup filter, List<PersonSort> sortOrders) {
+		ensureTestData();
+		if (sortOrders.isEmpty()){
+			return getPersons(offset, limit, filter);
+		}
+
+		final Stream<Person> filtered = persons.stream().filter(p -> filter(p, filter)).skip(offset).limit(limit).sorted(sortOrders.get(0));
+
+		return filtered;
+	}
 }

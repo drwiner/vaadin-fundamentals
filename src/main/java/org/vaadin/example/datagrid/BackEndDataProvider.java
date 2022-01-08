@@ -4,16 +4,12 @@ package org.vaadin.example.datagrid;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.data.provider.CallbackDataProvider;
-import com.vaadin.flow.data.provider.ConfigurableFilterDataProvider;
-import com.vaadin.flow.data.provider.DataProvider;
-import com.vaadin.flow.data.provider.SortDirection;
+import com.vaadin.flow.data.provider.*;
 import com.vaadin.flow.data.renderer.LocalDateRenderer;
 import com.vaadin.flow.router.Route;
 import org.vaadin.example.MainView;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,16 +40,18 @@ public class BackEndDataProvider extends VerticalLayout {
 
 //		// create lazy Data Provider using the PersonService
 		final CallbackDataProvider<Person, AgeGroup> dataProvider = DataProvider.fromFilteringCallbacks(
-				q -> service.getPersons(q.getOffset(), q.getLimit(), q.getFilter().orElse(null)),
+				q -> {
+					List<PersonSort> sortOrders = q.getSortOrders().stream()
+							.map(sortOrder -> new PersonSort(sortOrder.getSorted(), sortOrder.getDirection().equals(SortDirection.ASCENDING))).collect(Collectors.toList());
+					return service.getPersons(q.getOffset(), q.getLimit(), q.getFilter().orElse(null), sortOrders);
+				},
 				q -> service.countPersons(q.getOffset(), q.getLimit(), q.getFilter().orElse(null)));
 
-
-//		dataProvider.setSor
 		final ConfigurableFilterDataProvider<Person, Void, AgeGroup> filterProvider = dataProvider
 				.withConfigurableFilter();
 
-
-		grid.setItems(service.getAllPersons());
+		// In memory option
+//		grid.setItems(service.getAllPersons());
 
 
 		// add value change listener to filter and update the DataProvider
@@ -61,15 +59,21 @@ public class BackEndDataProvider extends VerticalLayout {
 		filter.addValueChangeListener(e -> {
 			final AgeGroup value = e.getValue();
 
-			grid.setItems(service.getPersons(value).collect(Collectors.toList()));
-//			grid.setItems(service.getAllPersons().stream().filter(p -> p.getAge() >= value.getMinAge() && p.getAge() <= value.getMaxAge()).collect(Collectors.toList()));
-//			filterProvider.setFilter(value);
+			filterProvider.setFilter(value);
 		});
+
 
 		grid.addColumn(Person::getName).setHeader("Name").setKey("name");
 		grid.addColumn(Person::getEmail).setHeader("Email").setKey("email");
-		grid.addColumn(Person::getAge).setHeader("Age").setKey("age").setComparator(Comparator.comparingInt(Person::getAge)).getComparator(SortDirection.ASCENDING);
+		grid.addColumn(Person::getAge).setHeader("Age").setKey("age").setSortable(true);
 		grid.addColumn(new LocalDateRenderer<>(Person::getBirthday)).setHeader("Birthday").setKey("birthday");
+
+		grid.addSortListener(event -> {
+			List<QuerySortOrder> querySortOrders = new ArrayList<>(grid.getDataCommunicator().getBackEndSorting());
+			dataProvider.setSortOrders(querySortOrders);
+		});
+
+		grid.setItems(filterProvider);
 	}
 
 }

@@ -50,7 +50,7 @@ public class FilteringDataProvider extends Composite<VerticalLayout>{
 		grid.setItems(dataProvider);
 
 		grid.addColumn(new LocalDateRenderer<>(Product::getAvailable)).setHeader("Available");
-		grid.addColumn(Product::getName).setHeader("Name");
+		grid.addColumn(Product::getName).setHeader("Name").setSortable(true);
 		grid.addColumn(Product::getPrice).setHeader("Price");
 
 		layout.add(grid);
