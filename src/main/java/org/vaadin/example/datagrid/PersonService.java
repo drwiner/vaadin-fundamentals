@@ -1,10 +1,7 @@
 package org.vaadin.example.datagrid;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class PersonService {
@@ -118,7 +115,21 @@ public class PersonService {
 			return getPersons(offset, limit, filter);
 		}
 
-		final Stream<Person> filtered = persons.stream().filter(p -> filter(p, filter)).skip(offset).limit(limit).sorted(sortOrders.get(0));
+		Comparator<Person> comparator = (o1,o2) -> 0;
+		for (PersonSort psort: sortOrders){
+			switch (psort.getPropertyName()) {
+				case PersonSort.AGE_KEY:
+					comparator = comparator.thenComparing(Person::getAge);
+					break;
+				// add more cases for each possible column
+			}
+			if (! psort.isDescending()) comparator = comparator.reversed();
+		}
+
+		List<Person> sortedList = new LinkedList<>(persons);
+		sortedList.sort(comparator);
+
+		final Stream<Person> filtered = sortedList.stream().filter(p -> filter(p, filter)).skip(offset).limit(limit);
 
 		return filtered;
 	}

@@ -4,9 +4,10 @@ import java.util.Comparator;
 
 public class PersonSort implements Comparator<Person> {
 
+    public static final String AGE_KEY = "age";
     @Override
     public int compare(Person o1, Person o2) {
-        if (propertyName.equals("age")) {
+        if (propertyName.equals(AGE_KEY)) {
             if (! descending)
                 return Integer.compare(o1.getAge(), o2.getAge());
             else {
