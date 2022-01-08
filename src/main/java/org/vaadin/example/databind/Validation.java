@@ -12,7 +12,7 @@ import com.vaadin.flow.router.RouteAlias;
 import org.vaadin.example.MainView;
 
 @Route(value = Validation.ROUTE, layout = MainView.class)
-@RouteAlias(value="", layout = MainView.class)
+//@RouteAlias(value="", layout = MainView.class)
 public class Validation extends VerticalLayout {
 
 	private static final long serialVersionUID = 1L;

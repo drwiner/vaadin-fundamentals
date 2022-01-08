@@ -20,10 +20,11 @@ public class MainView extends AppLayout implements RouterLayout {
 
         final VerticalLayout menuBar = new VerticalLayout();
 
-        menuBar.add(new RouterLink(Validation.TITLE, Validation.class));
-        menuBar.add(new RouterLink(BindingForms.TITLE, BindingForms.class));
-        menuBar.add(new RouterLink(FilteringDataProvider.TITLE, FilteringDataProvider.class));
-        menuBar.add(new RouterLink(BackEndDataProvider.TITLE, BackEndDataProvider.class));
+//        menuBar.add(new RouterLink(Validation.TITLE, Validation.class));
+//        menuBar.add(new RouterLink(BindingForms.TITLE, BindingForms.class));
+//        menuBar.add(new RouterLink(FilteringDataProvider.TITLE, FilteringDataProvider.class));
+//        menuBar.add(new RouterLink(BackEndDataProvider.TITLE, BackEndDataProvider.class));
+//        menuBar.add(new RouterLink("main_layout", MainLayout.class));
 
         addToDrawer(menuBar);
 
