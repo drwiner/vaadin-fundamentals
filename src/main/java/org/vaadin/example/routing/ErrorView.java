@@ -3,8 +3,9 @@ package org.vaadin.example.routing;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.*;
+import org.vaadin.example.MainView;
 
-@ParentLayout(MainLayout.class)
+@ParentLayout(MainView.class)
 //@Route(value="error", layout = MainLayout.class)
 public class ErrorView extends Div  implements HasErrorParameter<InvalidLotteryException> {
 

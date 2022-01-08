@@ -12,10 +12,11 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.*;
+import org.vaadin.example.MainView;
 
 import java.util.Random;
 
-@Route(value="lottery", layout = MainLayout.class)
+@Route(value="lottery", layout = MainView.class)
 public class LotteryView extends Composite<VerticalLayout> implements HasComponents, HasUrlParameter<Integer>, HasDynamicTitle, BeforeLeaveObserver {
 
 	private final Div lotteryResult = new Div();
@@ -35,8 +36,9 @@ public class LotteryView extends Composite<VerticalLayout> implements HasCompone
 
 					if (! validate(number)){
 						lotteryResult.setText(ErrorView.ERROR_TEXT);
+					} else {
+						updateContent(number);
 					}
-					updateContent(number);
 				} catch (final NumberFormatException ex) {
 					lotteryResult.setText("Please input a valid number");
 				}
