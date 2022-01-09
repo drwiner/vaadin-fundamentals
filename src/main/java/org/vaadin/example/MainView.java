@@ -47,9 +47,9 @@ public class MainView extends AppLayout implements HasComponents, RouterLayout, 
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
-//        if (VaadinSession.getCurrent().getAttribute("userLoggedIn") == null) {
-//            VaadinSession.getCurrent().setAttribute("intendedPath", event.getLocation().getPath());
-//            event.rerouteTo(LoginView.class);
-//        }
+        if (VaadinSession.getCurrent().getAttribute("userLoggedIn") == null) {
+            VaadinSession.getCurrent().setAttribute("intendedPath", event.getLocation().getPath());
+            event.rerouteTo(LoginView.class);
+        }
     }
 }

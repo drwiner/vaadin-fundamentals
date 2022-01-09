@@ -136,16 +136,6 @@
             <version>5.0.3</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.vaadin</groupId>-->
-<!--            <artifactId>flow-data</artifactId>-->
-<!--            <version>10.0-SNAPSHOT</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.vaadin</groupId>-->
-<!--            <artifactId>flow-html-components</artifactId>-->
-<!--            <version>10.0-SNAPSHOT</version>-->
-<!--        </dependency>-->
     </dependencies>
 
     <build>
@@ -162,35 +152,6 @@
                     <maxAttempts>240</maxAttempts>
                 </configuration>
             </plugin>
-
-            <!-- Define newer versions of Java compiler and war plugin to 
-                 better support latest JDK versions. -->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                <version>3.8.1</version>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-war-plugin</artifactId>-->
-<!--                <version>3.3.1</version>-->
-<!--            </plugin>-->
-            <!-- Jetty plugin for easy testing without a server -->
-<!--            <plugin>-->
-<!--                <groupId>org.eclipse.jetty</groupId>-->
-<!--                <artifactId>jetty-maven-plugin</artifactId>-->
-<!--                <version>${jetty.version}</version>-->
-<!--                <configuration>-->
-<!--                    &lt;!&ndash; If using IntelliJ IDEA with autocompilation, this-->
-<!--                    might cause lots of unnecessary compilations in the-->
-<!--                    background.&ndash;&gt;-->
-<!--                    <scanIntervalSeconds>2</scanIntervalSeconds>-->
-<!--                    &lt;!&ndash; Use war output directory to get the webpack files &ndash;&gt;-->
-<!--                    <webAppConfig>-->
-<!--                        <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>-->
-<!--                    </webAppConfig>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
 
             <!--
                 Take care of synchronizing java dependencies and imports in
