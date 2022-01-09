@@ -14,6 +14,5 @@ import com.vaadin.flow.theme.lumo.Lumo;
 //@Theme("my-theme")
 @Theme(themeClass= Lumo.class, variant=Lumo.DARK)
 @CssImport(value = "./styles/vaadin-grid-warning.css", themeFor = "vaadin-grid")
-//@CssImport("./styles/shared-styles.css")
 public class AppShell implements AppShellConfigurator {
 }
