@@ -100,7 +100,7 @@ public class LotteryView extends Composite<VerticalLayout> implements HasCompone
 		if(numberInput!=null && !numberInput.isEmpty()){
 			BeforeLeaveEvent.ContinueNavigationAction action = event.postpone();
 			Dialog confirmDialog = new Dialog();
-			Paragraph text = new Paragraph("Are you sure you want to leave this page?");
+			Paragraph text = new Paragraph("Are you sure you want to leave this Lottery page?");
 			Button confirmButton = new Button("Confirm", e -> {
 				action.proceed();
 				confirmDialog.close();

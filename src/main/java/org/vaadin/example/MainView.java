@@ -7,6 +7,7 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
+import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.server.VaadinSession;
 import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
@@ -21,6 +22,8 @@ import org.vaadin.example.routing.LotteryView;
 import org.vaadin.example.styling.GridStylingView;
 
 //@Route("")// this is commented out to allow a router link class to be default (route alias)
+
+
 public class MainView extends AppLayout implements HasComponents, RouterLayout, BeforeEnterObserver {
 
     public MainView() {
@@ -44,9 +47,9 @@ public class MainView extends AppLayout implements HasComponents, RouterLayout, 
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
-        if (VaadinSession.getCurrent().getAttribute("userLoggedIn") == null) {
-            VaadinSession.getCurrent().setAttribute("intendedPath", event.getLocation().getPath());
-            event.rerouteTo(LoginView.class);
-        }
+//        if (VaadinSession.getCurrent().getAttribute("userLoggedIn") == null) {
+//            VaadinSession.getCurrent().setAttribute("intendedPath", event.getLocation().getPath());
+//            event.rerouteTo(LoginView.class);
+//        }
     }
 }
