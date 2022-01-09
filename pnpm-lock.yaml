@@ -6,12 +6,17 @@ dependencies:
   '@vaadin/app-layout': 22.0.2
   '@vaadin/avatar': 22.0.2
   '@vaadin/avatar-group': 22.0.2
+  '@vaadin/board': 22.0.2
   '@vaadin/button': 22.0.2
+  '@vaadin/charts': 22.0.2
   '@vaadin/checkbox': 22.0.2
   '@vaadin/checkbox-group': 22.0.2
   '@vaadin/combo-box': 22.0.2
   '@vaadin/common-frontend': 0.0.17_lit@2.0.0
+  '@vaadin/confirm-dialog': 22.0.2
   '@vaadin/context-menu': 22.0.2
+  '@vaadin/cookie-consent': 22.0.2
+  '@vaadin/crud': 22.0.2
   '@vaadin/custom-field': 22.0.2
   '@vaadin/date-picker': 22.0.2
   '@vaadin/date-time-picker': 22.0.2
@@ -23,6 +28,7 @@ dependencies:
   '@vaadin/form-layout': 22.0.2
   '@vaadin/fusion-frontend': 0.0.15_lit@2.0.0
   '@vaadin/grid': 22.0.2
+  '@vaadin/grid-pro': 22.0.2
   '@vaadin/horizontal-layout': 22.0.2
   '@vaadin/icon': 22.0.2
   '@vaadin/icons': 22.0.2
@@ -39,6 +45,7 @@ dependencies:
   '@vaadin/polymer-legacy-adapter': 22.0.2
   '@vaadin/progress-bar': 22.0.2
   '@vaadin/radio-group': 22.0.2
+  '@vaadin/rich-text-editor': 22.0.2
   '@vaadin/router': 1.7.4
   '@vaadin/scroller': 22.0.2
   '@vaadin/select': 22.0.2
@@ -51,11 +58,16 @@ dependencies:
   '@vaadin/vaadin-accordion': 22.0.2
   '@vaadin/vaadin-app-layout': 22.0.2
   '@vaadin/vaadin-avatar': 22.0.2
+  '@vaadin/vaadin-board': 22.0.2
   '@vaadin/vaadin-button': 22.0.2
+  '@vaadin/vaadin-charts': 22.0.2
   '@vaadin/vaadin-checkbox': 22.0.2
   '@vaadin/vaadin-combo-box': 22.0.2
+  '@vaadin/vaadin-confirm-dialog': 22.0.2
   '@vaadin/vaadin-context-menu': 22.0.2
+  '@vaadin/vaadin-cookie-consent': 22.0.2
   '@vaadin/vaadin-core-shrinkwrap': 22.0.2
+  '@vaadin/vaadin-crud': 22.0.2
   '@vaadin/vaadin-custom-field': 22.0.2
   '@vaadin/vaadin-date-picker': 22.0.2
   '@vaadin/vaadin-date-time-picker': 22.0.2
@@ -63,6 +75,7 @@ dependencies:
   '@vaadin/vaadin-dialog': 22.0.2
   '@vaadin/vaadin-form-layout': 22.0.2
   '@vaadin/vaadin-grid': 22.0.2
+  '@vaadin/vaadin-grid-pro': 22.0.2
   '@vaadin/vaadin-icon': 22.0.2
   '@vaadin/vaadin-icons': 22.0.2
   '@vaadin/vaadin-item': 22.0.2
@@ -76,7 +89,9 @@ dependencies:
   '@vaadin/vaadin-ordered-layout': 22.0.2
   '@vaadin/vaadin-progress-bar': 22.0.2
   '@vaadin/vaadin-radio-button': 22.0.2
+  '@vaadin/vaadin-rich-text-editor': 22.0.2
   '@vaadin/vaadin-select': 22.0.2
+  '@vaadin/vaadin-shrinkwrap': 22.0.2
   '@vaadin/vaadin-split-layout': 22.0.2
   '@vaadin/vaadin-tabs': 22.0.2
   '@vaadin/vaadin-text-field': 22.0.2
@@ -1621,6 +1636,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-g5Ks5qKPS37pSfZb9MyqBJ6qYYXOKcznLIaXHo0vTQBCaAOVtvXVbX6YXTqF0Z5uRU5/6E7k65xWZlz0au+HNQ==
+  /@vaadin/board/22.0.2:
+    dependencies:
+      '@polymer/iron-resizable-behavior': 3.0.1
+      '@polymer/polymer': 3.2.0
+      '@vaadin/component-base': 22.0.2
+      '@vaadin/vaadin-license-checker': 2.1.2
+    dev: false
+    resolution:
+      integrity: sha512-V5r+64hMuG45oT61+EQMLdNIoKkm8rEG4K0liWcwBfVk7UpUcxjSLyNCe/swIghVcTQP+B8NUqbYFkzRHYyIng==
   /@vaadin/button/22.0.2:
     dependencies:
       '@polymer/polymer': 3.2.0
@@ -1631,6 +1655,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-6BG9dtTDO10rLcDoKkMxUkIFDszu6wof9NBiwFMTAbIKjfuCo++bh6jylCBbjYHTIvl1hF7ObahNTO1uNoFx+A==
+  /@vaadin/charts/22.0.2:
+    dependencies:
+      '@polymer/polymer': 3.2.0
+      '@vaadin/component-base': 22.0.2
+      '@vaadin/vaadin-license-checker': 2.1.2
+      '@vaadin/vaadin-themable-mixin': 22.0.2
+      highcharts: 9.2.2
+    dev: false
+    resolution:
+      integrity: sha512-NvyErgKESQm9Khv3yTAYjF7rwi8kUNQxCcqDcKJhqW7s5OAi80vtP8GjoBxCXtlZP5N85tnj4s/KW5fZtAkbsA==
   /@vaadin/checkbox-group/22.0.2:
     dependencies:
       '@polymer/polymer': 3.2.0
@@ -1694,6 +1728,20 @@ packages:
     dev: false
     resolution:
       integrity: sha512-3I+8McL2FaNXsPiz/N02wvUAX03wyJlt+L2TGAlW18TfC1P4VplPpXMD0UqdNBdI1Hq0ET5kYFaLAnKLprr7mQ==
+  /@vaadin/confirm-dialog/22.0.2:
+    dependencies:
+      '@polymer/polymer': 3.2.0
+      '@vaadin/button': 22.0.2
+      '@vaadin/component-base': 22.0.2
+      '@vaadin/dialog': 22.0.2
+      '@vaadin/vaadin-license-checker': 2.1.2
+      '@vaadin/vaadin-lumo-styles': 22.0.2
+      '@vaadin/vaadin-material-styles': 22.0.2
+      '@vaadin/vaadin-overlay': 22.0.2
+      '@vaadin/vaadin-themable-mixin': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-zNqBi2XLokjQPWbruj84A1cD0LuUc7FKtkHi8OAZnttgVZ9NXwi7v1ctIbnqfB6w+ZrIiZTWdrpSEosYCUwNkw==
   /@vaadin/context-menu/22.0.2:
     dependencies:
       '@open-wc/dedupe-mixin': 1.3.0
@@ -1709,6 +1757,36 @@ packages:
     dev: false
     resolution:
       integrity: sha512-5x3o+imGeEkkp6XPaxWWIH6gb8Ow+omHngQHV9j62prUXxcAzLkpijV19WKodmKxvKAOcvffXszkFEJY7M8Urg==
+  /@vaadin/cookie-consent/22.0.2:
+    dependencies:
+      '@polymer/polymer': 3.2.0
+      '@vaadin/component-base': 22.0.2
+      '@vaadin/vaadin-license-checker': 2.1.2
+      '@vaadin/vaadin-lumo-styles': 22.0.2
+      '@vaadin/vaadin-material-styles': 22.0.2
+      cookieconsent: 3.1.1
+    dev: false
+    resolution:
+      integrity: sha512-Kuq5qOIFAd5kD6dyl8UfggLelDp4GWMDYETKNY/tPBCjLbjb+V6k+9Yws31V+Uus57+OeV9aszyHGYj1l5UZFw==
+  /@vaadin/crud/22.0.2:
+    dependencies:
+      '@open-wc/dedupe-mixin': 1.3.0
+      '@polymer/iron-media-query': 3.0.1
+      '@polymer/polymer': 3.2.0
+      '@vaadin/button': 22.0.2
+      '@vaadin/component-base': 22.0.2
+      '@vaadin/confirm-dialog': 22.0.2
+      '@vaadin/dialog': 22.0.2
+      '@vaadin/form-layout': 22.0.2
+      '@vaadin/grid': 22.0.2
+      '@vaadin/text-field': 22.0.2
+      '@vaadin/vaadin-license-checker': 2.1.2
+      '@vaadin/vaadin-lumo-styles': 22.0.2
+      '@vaadin/vaadin-material-styles': 22.0.2
+      '@vaadin/vaadin-themable-mixin': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-mGPpZzppCI49XMbMvs3sMhdLMzRI+8z3QQkBCBe2XYHpREGD89JnHkjy329IfjOamOKWoUe0B41RJwukBLRjHA==
   /@vaadin/custom-field/22.0.2:
     dependencies:
       '@polymer/polymer': 3.2.0
@@ -1824,6 +1902,24 @@ packages:
       lit: ^2.0.0
     resolution:
       integrity: sha512-708e7EK3jow6jWPjok4bSVr1Uxj2oe0LxYCgwKoxVW44zbccZmIkdEts+/Y3X3qbmDbwOPb450+yGVs/xtvm6g==
+  /@vaadin/grid-pro/22.0.2:
+    dependencies:
+      '@open-wc/dedupe-mixin': 1.3.0
+      '@polymer/polymer': 3.2.0
+      '@vaadin/checkbox': 22.0.2
+      '@vaadin/component-base': 22.0.2
+      '@vaadin/grid': 22.0.2
+      '@vaadin/item': 22.0.2
+      '@vaadin/list-box': 22.0.2
+      '@vaadin/select': 22.0.2
+      '@vaadin/text-field': 22.0.2
+      '@vaadin/vaadin-license-checker': 2.1.2
+      '@vaadin/vaadin-lumo-styles': 22.0.2
+      '@vaadin/vaadin-material-styles': 22.0.2
+      '@vaadin/vaadin-themable-mixin': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-rEm34ee2i0LdAJLZLSyEBlTUF9gKYQoXUlt9eVdaw78nEP0aQKC9C/CzPFbMRYu+gHmpNFctwdbjZww2OsgG8g==
   /@vaadin/grid/22.0.2:
     dependencies:
       '@open-wc/dedupe-mixin': 1.3.0
@@ -2022,6 +2118,20 @@ packages:
     dev: false
     resolution:
       integrity: sha512-B8yJlgSdx0XRPavgqTr55HdChPxjrYHziRJD/O6Nn1e6R6C+kk7zNQO8EWdrVgIPaOTff1SJyfEbLYcpo4bIcA==
+  /@vaadin/rich-text-editor/22.0.2:
+    dependencies:
+      '@polymer/polymer': 3.2.0
+      '@vaadin/button': 22.0.2
+      '@vaadin/component-base': 22.0.2
+      '@vaadin/confirm-dialog': 22.0.2
+      '@vaadin/text-field': 22.0.2
+      '@vaadin/vaadin-license-checker': 2.1.2
+      '@vaadin/vaadin-lumo-styles': 22.0.2
+      '@vaadin/vaadin-material-styles': 22.0.2
+      '@vaadin/vaadin-themable-mixin': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-B6XEouAsF3a27bdoZLuLPNEpwZ1SJW6ya43BFVz2H5x9q3QZCqnIuLqwOb5n/sTGiEbsiMlSwzhuYJE2Ir6aKQ==
   /@vaadin/router/1.7.4:
     dependencies:
       '@vaadin/vaadin-usage-statistics': 2.1.0
@@ -2149,12 +2259,24 @@ packages:
     dev: false
     resolution:
       integrity: sha512-vlByyqD4qXvxH2cbTRh4N+RQIh+2FBwmYExnviNMyUjX00YeGeoN1o+UxwNG2oDfLsCCyK3KV+7uywYmaO1vjQ==
+  /@vaadin/vaadin-board/22.0.2:
+    dependencies:
+      '@vaadin/board': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-1qCm8oMlAbXDojmGW2/ZJMHewKw8PxZtZ8IkmkzUDK7fPDQNgZklLYorGXGzv5XxXRWvdby2l1SWd66KYjpvfA==
   /@vaadin/vaadin-button/22.0.2:
     dependencies:
       '@vaadin/button': 22.0.2
     dev: false
     resolution:
       integrity: sha512-sNiu8A+v94DRYC6uD+Uca1Fzy15sH86owb9IWYnPIDO8kzYTXxK9wJ2yCdbl5FEOe55e2nzopW3BHwMWcSVefg==
+  /@vaadin/vaadin-charts/22.0.2:
+    dependencies:
+      '@vaadin/charts': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-f4lLO3vC+rpSqZniGVY5wCE4XZ0JSo1rkeQsMg6rdg4eEItk9/OWna06h0T1VZTrD1HyUXZSuLImFhqEtlsCUg==
   /@vaadin/vaadin-checkbox/22.0.2:
     dependencies:
       '@vaadin/checkbox': 22.0.2
@@ -2168,12 +2290,24 @@ packages:
     dev: false
     resolution:
       integrity: sha512-I6lC32Ss6dblNhRF4/u4h+0ezWlK16yxpECaV4uw0qKM+BfHUrKCcdJLJ0WeA70omDchRmaYnH9z+fiKXwpohg==
+  /@vaadin/vaadin-confirm-dialog/22.0.2:
+    dependencies:
+      '@vaadin/confirm-dialog': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-iCMv0d5Swq0957xeEbIIbKr6pZG3ktdlKCohhVJAVlGt4Z/m8OUeq0w5CHJEHowpDEmNPxjzwZzkWf4wJ41G4A==
   /@vaadin/vaadin-context-menu/22.0.2:
     dependencies:
       '@vaadin/context-menu': 22.0.2
     dev: false
     resolution:
       integrity: sha512-BN/Dz6c622964GNJVDGqnU1rQ1gRkrshJsyir3mvqkdlahxTh/Z/eeLYJsFR1BXhIPS8wQn6vQ0XZI1LrprToA==
+  /@vaadin/vaadin-cookie-consent/22.0.2:
+    dependencies:
+      '@vaadin/cookie-consent': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-rBXXxRmJx3Mka/wH5Srjui+H5Hleahl0PZCMkyNlq4w9TPq24XX7tJRy51Faj/ciVtP3U0WdWwNp+R/uRf9INA==
   /@vaadin/vaadin-core-shrinkwrap/22.0.2:
     dependencies:
       '@polymer/iron-a11y-announcer': 3.0.2
@@ -2274,6 +2408,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-T+gn1ob3SFuRxRC9VQETNDIlPjtUg1sI3H3vb4uG0n4ni2TxI5O7MnS3yRIQMbgm7gigvdXZphFhTrapXs2PSA==
+  /@vaadin/vaadin-crud/22.0.2:
+    dependencies:
+      '@vaadin/crud': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-D4IV7UmqFWySj+7SGd5ht1jk4/EAV/C7dN4/K/rkg/Zxk6X9vbmT5Cn5vpVRGOVBPgyh0N8OdRnk/3af85c3yA==
   /@vaadin/vaadin-custom-field/22.0.2:
     dependencies:
       '@vaadin/custom-field': 22.0.2
@@ -2314,6 +2454,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-uuX51Eid1CBipibWRxn7dsKNHQO0FnhMO86EVIZBrdOBvSwV3e+xPF9vqZrv/e5R2gBPpYVTCy7CLfviEBxxnQ==
+  /@vaadin/vaadin-grid-pro/22.0.2:
+    dependencies:
+      '@vaadin/grid-pro': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-7RNJIIY4YCtKEkDQugnYPUo6xaAZoWMCGZm2J4MfkEsQFeEEuZzp1JI3+ooflZPbkCdYJfSC/wmMfLcrGYQIxg==
   /@vaadin/vaadin-grid/22.0.2:
     dependencies:
       '@vaadin/grid': 22.0.2
@@ -2338,6 +2484,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Dt4Q1WbdWGSXpFbHbqvJy+Hc3e1SVAGQkiUQjeKavzwzhYRey+/Z9IU+s+69efiBRZknPi0snD5KIXsg+g23FQ==
+  /@vaadin/vaadin-license-checker/2.1.2:
+    dependencies:
+      '@vaadin/vaadin-development-mode-detector': 2.0.4
+    dev: false
+    resolution:
+      integrity: sha512-oD6/MoavXyIZp6NWhkbJD5RKrpiWohhaQpgqjM0bFIthRr+1NoiG5R1w0uY3NIdMDuaXlsUFSQJ/Viz1v7F/jQ==
   /@vaadin/vaadin-list-box/22.0.2:
     dependencies:
       '@vaadin/list-box': 22.0.2
@@ -2424,12 +2576,132 @@ packages:
     dev: false
     resolution:
       integrity: sha512-lf80c6u0icsDHvWqxLi6JEdCnNeuyjuO6N/5mToWojgQMKfVXKl7pQaLO2MZ/Ms6KUTibxI4oimek9vFOWnHWw==
+  /@vaadin/vaadin-rich-text-editor/22.0.2:
+    dependencies:
+      '@vaadin/rich-text-editor': 22.0.2
+    dev: false
+    resolution:
+      integrity: sha512-jeDOFpwxf11y/gaxdbeMvhOsZ7GUojbwAmlj17zCZ7AL0ZZnGoeQ6LFlEiYlhpcmnbaeNvIOtiQ6QzZOvSsqEQ==
   /@vaadin/vaadin-select/22.0.2:
     dependencies:
       '@vaadin/select': 22.0.2
     dev: false
     resolution:
       integrity: sha512-PQUfjHLnc7wI3q3zl5yiQH9tIxLY5A4lF7Qt7k9bDaPIjlcXXol4T9KUti24Zu8erP6LQGxmdHVNjQdrcabMOQ==
+  /@vaadin/vaadin-shrinkwrap/22.0.2:
+    dependencies:
+      '@polymer/iron-a11y-announcer': 3.0.2
+      '@polymer/iron-icon': 3.0.1
+      '@polymer/iron-iconset-svg': 3.0.1
+      '@polymer/iron-list': 3.1.0
+      '@polymer/iron-media-query': 3.0.1
+      '@polymer/iron-meta': 3.0.1
+      '@polymer/iron-resizable-behavior': 3.0.1
+      '@vaadin/accordion': 22.0.2
+      '@vaadin/app-layout': 22.0.2
+      '@vaadin/avatar': 22.0.2
+      '@vaadin/avatar-group': 22.0.2
+      '@vaadin/board': 22.0.2
+      '@vaadin/button': 22.0.2
+      '@vaadin/charts': 22.0.2
+      '@vaadin/checkbox': 22.0.2
+      '@vaadin/checkbox-group': 22.0.2
+      '@vaadin/combo-box': 22.0.2
+      '@vaadin/component-base': 22.0.2
+      '@vaadin/confirm-dialog': 22.0.2
+      '@vaadin/context-menu': 22.0.2
+      '@vaadin/cookie-consent': 22.0.2
+      '@vaadin/crud': 22.0.2
+      '@vaadin/custom-field': 22.0.2
+      '@vaadin/date-picker': 22.0.2
+      '@vaadin/date-time-picker': 22.0.2
+      '@vaadin/details': 22.0.2
+      '@vaadin/dialog': 22.0.2
+      '@vaadin/email-field': 22.0.2
+      '@vaadin/field-base': 22.0.2
+      '@vaadin/form-layout': 22.0.2
+      '@vaadin/grid': 22.0.2
+      '@vaadin/grid-pro': 22.0.2
+      '@vaadin/horizontal-layout': 22.0.2
+      '@vaadin/icon': 22.0.2
+      '@vaadin/icons': 22.0.2
+      '@vaadin/input-container': 22.0.2
+      '@vaadin/integer-field': 22.0.2
+      '@vaadin/item': 22.0.2
+      '@vaadin/list-box': 22.0.2
+      '@vaadin/login': 22.0.2
+      '@vaadin/menu-bar': 22.0.2
+      '@vaadin/message-input': 22.0.2
+      '@vaadin/message-list': 22.0.2
+      '@vaadin/notification': 22.0.2
+      '@vaadin/number-field': 22.0.2
+      '@vaadin/password-field': 22.0.2
+      '@vaadin/polymer-legacy-adapter': 22.0.2
+      '@vaadin/progress-bar': 22.0.2
+      '@vaadin/radio-group': 22.0.2
+      '@vaadin/rich-text-editor': 22.0.2
+      '@vaadin/router': 1.7.4
+      '@vaadin/scroller': 22.0.2
+      '@vaadin/select': 22.0.2
+      '@vaadin/split-layout': 22.0.2
+      '@vaadin/tabs': 22.0.2
+      '@vaadin/text-area': 22.0.2
+      '@vaadin/text-field': 22.0.2
+      '@vaadin/time-picker': 22.0.2
+      '@vaadin/upload': 22.0.2
+      '@vaadin/vaadin-accordion': 22.0.2
+      '@vaadin/vaadin-app-layout': 22.0.2
+      '@vaadin/vaadin-avatar': 22.0.2
+      '@vaadin/vaadin-board': 22.0.2
+      '@vaadin/vaadin-button': 22.0.2
+      '@vaadin/vaadin-charts': 22.0.2
+      '@vaadin/vaadin-checkbox': 22.0.2
+      '@vaadin/vaadin-combo-box': 22.0.2
+      '@vaadin/vaadin-confirm-dialog': 22.0.2
+      '@vaadin/vaadin-context-menu': 22.0.2
+      '@vaadin/vaadin-cookie-consent': 22.0.2
+      '@vaadin/vaadin-crud': 22.0.2
+      '@vaadin/vaadin-custom-field': 22.0.2
+      '@vaadin/vaadin-date-picker': 22.0.2
+      '@vaadin/vaadin-date-time-picker': 22.0.2
+      '@vaadin/vaadin-details': 22.0.2
+      '@vaadin/vaadin-development-mode-detector': 2.0.4
+      '@vaadin/vaadin-dialog': 22.0.2
+      '@vaadin/vaadin-form-layout': 22.0.2
+      '@vaadin/vaadin-grid': 22.0.2
+      '@vaadin/vaadin-grid-pro': 22.0.2
+      '@vaadin/vaadin-icon': 22.0.2
+      '@vaadin/vaadin-icons': 22.0.2
+      '@vaadin/vaadin-item': 22.0.2
+      '@vaadin/vaadin-list-box': 22.0.2
+      '@vaadin/vaadin-list-mixin': 22.0.2
+      '@vaadin/vaadin-login': 22.0.2
+      '@vaadin/vaadin-lumo-styles': 22.0.2
+      '@vaadin/vaadin-material-styles': 22.0.2
+      '@vaadin/vaadin-menu-bar': 22.0.2
+      '@vaadin/vaadin-messages': 22.0.2
+      '@vaadin/vaadin-notification': 22.0.2
+      '@vaadin/vaadin-ordered-layout': 22.0.2
+      '@vaadin/vaadin-overlay': 22.0.2
+      '@vaadin/vaadin-progress-bar': 22.0.2
+      '@vaadin/vaadin-radio-button': 22.0.2
+      '@vaadin/vaadin-rich-text-editor': 22.0.2
+      '@vaadin/vaadin-select': 22.0.2
+      '@vaadin/vaadin-split-layout': 22.0.2
+      '@vaadin/vaadin-tabs': 22.0.2
+      '@vaadin/vaadin-template-renderer': 22.0.2
+      '@vaadin/vaadin-text-field': 22.0.2
+      '@vaadin/vaadin-themable-mixin': 22.0.2
+      '@vaadin/vaadin-time-picker': 22.0.2
+      '@vaadin/vaadin-upload': 22.0.2
+      '@vaadin/vaadin-usage-statistics': 2.1.0
+      '@vaadin/vaadin-virtual-list': 22.0.2
+      '@vaadin/vertical-layout': 22.0.2
+      '@vaadin/virtual-list': 22.0.2
+      '@webcomponents/shadycss': 1.9.6
+    dev: false
+    resolution:
+      integrity: sha512-bVaG26VfJ2xhdBYPQOpSi1qPcLJs25NW3fu9q0tBKWOqSKZQusJeg2sOTNtezddRNYY7qhD5ZIJOgeK5Wn6cYA==
   /@vaadin/vaadin-split-layout/22.0.2:
     dependencies:
       '@vaadin/split-layout': 22.0.2
@@ -4004,6 +4276,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-ZwrFkGJxUR3EIoXtO+yVE69Eb7KlixbaeAWfBQB9vVsNn/o+Yw69gBWSSDK825hQNdN+wF8zELf3dFNl/kxkUA==
+  /cookieconsent/3.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-v8JWLJcI7Zs9NWrs8hiVldVtm3EBF70TJI231vxn6YToBGj0c9dvdnYwltydkAnrbBMOM/qX1xLFrnTfm5wTag==
   /copy-concurrently/1.0.5:
     dependencies:
       aproba: 1.2.0
@@ -5178,6 +5454,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
+  /highcharts/9.2.2:
+    dev: false
+    resolution:
+      integrity: sha512-OMEdFCaG626ES1JEcKAvJTpxAOMuchy0XuAplmnOs0Yu7NMd2RMfTLFQ2fCJOxo3ubSdm/RVQwKAWC+5HYThnw==
   /hmac-drbg/1.0.1:
     dependencies:
       hash.js: 1.1.7
@@ -8663,13 +8943,18 @@ specifiers:
   '@vaadin/application-theme-plugin': ./target/plugins/application-theme-plugin
   '@vaadin/avatar': 22.0.2
   '@vaadin/avatar-group': 22.0.2
+  '@vaadin/board': 22.0.2
   '@vaadin/build-status-plugin': ./target/plugins/build-status-plugin
   '@vaadin/button': 22.0.2
+  '@vaadin/charts': 22.0.2
   '@vaadin/checkbox': 22.0.2
   '@vaadin/checkbox-group': 22.0.2
   '@vaadin/combo-box': 22.0.2
   '@vaadin/common-frontend': 0.0.17
+  '@vaadin/confirm-dialog': 22.0.2
   '@vaadin/context-menu': 22.0.2
+  '@vaadin/cookie-consent': 22.0.2
+  '@vaadin/crud': 22.0.2
   '@vaadin/custom-field': 22.0.2
   '@vaadin/date-picker': 22.0.2
   '@vaadin/date-time-picker': 22.0.2
@@ -8681,6 +8966,7 @@ specifiers:
   '@vaadin/form-layout': 22.0.2
   '@vaadin/fusion-frontend': 0.0.15
   '@vaadin/grid': 22.0.2
+  '@vaadin/grid-pro': 22.0.2
   '@vaadin/horizontal-layout': 22.0.2
   '@vaadin/icon': 22.0.2
   '@vaadin/icons': 22.0.2
@@ -8697,6 +8983,7 @@ specifiers:
   '@vaadin/polymer-legacy-adapter': 22.0.2
   '@vaadin/progress-bar': 22.0.2
   '@vaadin/radio-group': 22.0.2
+  '@vaadin/rich-text-editor': 22.0.2
   '@vaadin/router': 1.7.4
   '@vaadin/scroller': 22.0.2
   '@vaadin/select': 22.0.2
@@ -8711,11 +8998,16 @@ specifiers:
   '@vaadin/vaadin-accordion': 22.0.2
   '@vaadin/vaadin-app-layout': 22.0.2
   '@vaadin/vaadin-avatar': 22.0.2
+  '@vaadin/vaadin-board': 22.0.2
   '@vaadin/vaadin-button': 22.0.2
+  '@vaadin/vaadin-charts': 22.0.2
   '@vaadin/vaadin-checkbox': 22.0.2
   '@vaadin/vaadin-combo-box': 22.0.2
+  '@vaadin/vaadin-confirm-dialog': 22.0.2
   '@vaadin/vaadin-context-menu': 22.0.2
+  '@vaadin/vaadin-cookie-consent': 22.0.2
   '@vaadin/vaadin-core-shrinkwrap': 22.0.2
+  '@vaadin/vaadin-crud': 22.0.2
   '@vaadin/vaadin-custom-field': 22.0.2
   '@vaadin/vaadin-date-picker': 22.0.2
   '@vaadin/vaadin-date-time-picker': 22.0.2
@@ -8723,6 +9015,7 @@ specifiers:
   '@vaadin/vaadin-dialog': 22.0.2
   '@vaadin/vaadin-form-layout': 22.0.2
   '@vaadin/vaadin-grid': 22.0.2
+  '@vaadin/vaadin-grid-pro': 22.0.2
   '@vaadin/vaadin-icon': 22.0.2
   '@vaadin/vaadin-icons': 22.0.2
   '@vaadin/vaadin-item': 22.0.2
@@ -8736,7 +9029,9 @@ specifiers:
   '@vaadin/vaadin-ordered-layout': 22.0.2
   '@vaadin/vaadin-progress-bar': 22.0.2
   '@vaadin/vaadin-radio-button': 22.0.2
+  '@vaadin/vaadin-rich-text-editor': 22.0.2
   '@vaadin/vaadin-select': 22.0.2
+  '@vaadin/vaadin-shrinkwrap': 22.0.2
   '@vaadin/vaadin-split-layout': 22.0.2
   '@vaadin/vaadin-tabs': 22.0.2
   '@vaadin/vaadin-text-field': 22.0.2
