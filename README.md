@@ -1,6 +1,6 @@
 # Vaadin Tutorial Solutions for Vaadin 22
 
-This project is the solutions to the Vaadin 14 tutorials adapted to run in Vaadin 22 environment.
+This project is the solutions to the Vaadin 14 tutorials adapted to run in Vaadin 22 environment, then pushed to Google Cloud Platform
 
 Using Spring, then do `mvn spring-boot:run`
 
@@ -24,9 +24,19 @@ Tag image with registry name for Google Cloud Run (GCR) project Id
 
 e.g.,  `docker tag 8666b80ba571 gcr.io/vaadintest-337721/8666b80ba571`
 
+If first time, make sure you `gcloud auth login` and `gcloud auth configure-docker`
+
+
 Push image to GCR
 
 `docker push gcr.io/[PROJECT-ID]/[IMAGE]`
 
 e.g., `docker push gcr.io/vaadintest-337721/8666b80ba571`
+
+
+Then go to Google Cloud Run and deploy by creating service.
+
+Also, in the YAML tab on Kubernetes service, looking at default port:
+`sessionAffinity: None to sessionAffinity: ClientIP`
+(https://vaadin.com/learn/tutorials/cloud-deployment/google#_prepare_the_application)
 
