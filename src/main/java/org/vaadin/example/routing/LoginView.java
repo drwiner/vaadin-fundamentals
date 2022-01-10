@@ -1,22 +1,42 @@
 package org.vaadin.example.routing;
 
-import com.vaadin.flow.component.Composite;
-import com.vaadin.flow.component.HasComponents;
-import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.login.LoginForm;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.BeforeEnterEvent;
+import com.vaadin.flow.router.BeforeEnterObserver;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinSession;
-
-import java.util.Optional;
 
 @Route("login")
-public class LoginView extends Composite<Div> implements HasComponents {
+@PageTitle("Login")
+public class LoginView extends VerticalLayout implements BeforeEnterObserver {
+
+	private final LoginForm login = new LoginForm();
+
 	public LoginView() {
-		add(new Button("Login", e -> {
-			VaadinSession.getCurrent().setAttribute("userLoggedIn", true);
-			Object intendedPath = VaadinSession.getCurrent().getAttribute("intendedPath");
-			UI.getCurrent().navigate(Optional.ofNullable(intendedPath).map(Object::toString).orElse(""));
-		}));
+		addClassName("login-view");
+		setSizeFull();
+		setAlignItems(Alignment.CENTER);
+		setJustifyContentMode(JustifyContentMode.CENTER);
+
+		login.setAction("login");
+		add(new H1("Vaadin App"), login);
+
+//		add(new Button("Login", e -> {
+//			VaadinSession.getCurrent().setAttribute("userLoggedIn", true);
+//			Object intendedPath = VaadinSession.getCurrent().getAttribute("intendedPath");
+//			UI.getCurrent().navigate(Optional.ofNullable(intendedPath).map(Object::toString).orElse(""));
+//		}));
+	}
+
+	@Override
+	public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
+		if(beforeEnterEvent.getLocation()
+				.getQueryParameters()
+				.getParameters()
+				.containsKey("error")) {
+			login.setError(true);
+		}
 	}
 }
