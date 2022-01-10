@@ -14,9 +14,11 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.*;
 import org.vaadin.example.MainView;
 
+import javax.annotation.security.PermitAll;
 import java.util.Random;
 
 @Route(value="lottery", layout = MainView.class)
+@PermitAll
 public class LotteryView extends Composite<VerticalLayout> implements HasComponents, HasUrlParameter<Integer>, HasDynamicTitle, BeforeLeaveObserver {
 
 	private final Div lotteryResult = new Div();

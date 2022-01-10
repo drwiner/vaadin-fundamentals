@@ -9,11 +9,13 @@ import com.vaadin.flow.data.renderer.LocalDateRenderer;
 import com.vaadin.flow.router.Route;
 import org.vaadin.example.MainView;
 
+import javax.annotation.security.PermitAll;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Route(value = BackEndDataProvider.ROUTE, layout = MainView.class)
+@PermitAll
 public class BackEndDataProvider extends VerticalLayout {
 	private static final long serialVersionUID = 1L;
 

@@ -4,13 +4,15 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.router.Route;
 import org.vaadin.example.MainView;
 
+import javax.annotation.security.PermitAll;
 import java.time.LocalDate;
 
 @SuppressWarnings("serial")
 @Route(value = BindingForms.ROUTE, layout = MainView.class)
+@PermitAll
 public class BindingForms extends HorizontalLayout {
 
-	public static final String ROUTE = "ex2";
+	public static final String ROUTE = "binding";
 	public static final String TITLE = "Binding Forms";
 
 	public BindingForms() {

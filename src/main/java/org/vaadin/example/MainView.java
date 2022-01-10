@@ -3,14 +3,14 @@ package org.vaadin.example;
 import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
-import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
-import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.server.VaadinSession;
-import com.vaadin.flow.theme.Theme;
-import com.vaadin.flow.theme.lumo.Lumo;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.vaadin.example.databind.BindingForms;
 import org.vaadin.example.databind.Validation;
 import org.vaadin.example.datagrid.BackEndDataProvider;
@@ -19,16 +19,44 @@ import org.vaadin.example.routing.HomeView;
 import org.vaadin.example.routing.LoginView;
 import org.vaadin.example.routing.LogoutView;
 import org.vaadin.example.routing.LotteryView;
+import org.vaadin.example.security.SecurityService;
 import org.vaadin.example.styling.GridStylingView;
 
+import javax.annotation.security.PermitAll;
+
 //@Route("")// this is commented out to allow a router link class to be default (route alias)
-
-
+//@Route
+//@AnonymousAllowed
 public class MainView extends AppLayout implements HasComponents, RouterLayout, BeforeEnterObserver {
 
-    public MainView() {
-        addToNavbar(new DrawerToggle());
-        addToNavbar(new H2("Vaadin Examples") );
+    private final SecurityService securityService;
+
+    public MainView(SecurityService securityService) {
+        this.securityService = securityService;
+        createHeader();
+        createDrawer();
+    }
+
+    public void createHeader(){
+
+        Button logout = new Button("Log out", e -> securityService.logout());
+
+        H2 logo = new H2("Vaadin App");
+        logo.addClassNames("text-l", "m-m");
+
+        HorizontalLayout header = new HorizontalLayout(new DrawerToggle(), logo, logout);
+        header.expand(logo);
+        header.addClassNames("py-0", "px-m");
+        header.setWidth("100%");
+        header.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
+
+        addToNavbar(header);
+
+    }
+
+
+    public void createDrawer() {
+
 
         final VerticalLayout menuBar = new VerticalLayout();
 

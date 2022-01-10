@@ -12,10 +12,12 @@ import com.vaadin.flow.data.renderer.LocalDateRenderer;
 import com.vaadin.flow.router.Route;
 import org.vaadin.example.MainView;
 
+import javax.annotation.security.PermitAll;
 import java.time.LocalDate;
 
 @SuppressWarnings("serial")
 @Route(value = FilteringDataProvider.ROUTE, layout = MainView.class)
+@PermitAll
 public class FilteringDataProvider extends Composite<VerticalLayout>{
 
 	public static final String ROUTE = "productgrid";

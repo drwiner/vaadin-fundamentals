@@ -8,9 +8,12 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.vaadin.example.MainView;
 
+import javax.annotation.security.PermitAll;
+
 @Route(value="home", layout = MainView.class)
 //@RouteAlias(value="", layout = MainLayout.class)
 @PageTitle("Home")
+@PermitAll
 public class HomeView extends Composite<VerticalLayout> implements HasComponents {
 
 	public HomeView() {

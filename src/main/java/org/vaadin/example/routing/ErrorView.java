@@ -5,7 +5,10 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.*;
 import org.vaadin.example.MainView;
 
+import javax.annotation.security.PermitAll;
+
 @ParentLayout(MainView.class)
+@PermitAll
 //@Route(value="error", layout = MainLayout.class)
 public class ErrorView extends Div  implements HasErrorParameter<InvalidLotteryException> {
 
