@@ -58,7 +58,7 @@ public class MainLayout extends Composite<VerticalLayout> implements HasComponen
     public void beforeEnter(BeforeEnterEvent event) {
         if (VaadinSession.getCurrent().getAttribute("userLoggedIn") == null) {
             VaadinSession.getCurrent().setAttribute("intendedPath", event.getLocation().getPath());
-            event.rerouteTo(LoginView.class);
+//            event.rerouteTo(LoginView.class);
         }
     }
 

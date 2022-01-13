@@ -2,7 +2,12 @@
 
 This project is the solutions to the Vaadin 14 tutorials adapted to run in Vaadin 22 environment, then pushed to Google Cloud Platform
 
-Using Spring, then do `mvn spring-boot:run`
+Then added Auth0 credentials, (use auth-default.properties and `mv` to auth0.properties).
+
+- Auth0LoginView.class delegates to Auth0 universal login.
+- LoginView does VaadinSession Login and has sample user tokens.
+
+Run with `mvn spring-boot:run`
 
 To prepare for production:
 `mvn install -Pproduction`

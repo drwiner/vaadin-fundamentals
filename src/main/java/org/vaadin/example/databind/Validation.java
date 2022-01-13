@@ -9,11 +9,12 @@ import com.vaadin.flow.data.validator.EmailValidator;
 import com.vaadin.flow.data.validator.StringLengthValidator;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.vaadin.example.MainView;
 
 import javax.annotation.security.PermitAll;
 
-@PermitAll
+@AnonymousAllowed
 @Route(value = Validation.ROUTE, layout = MainView.class)
 @RouteAlias(value="", layout = MainView.class)
 public class Validation extends VerticalLayout {

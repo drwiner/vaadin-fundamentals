@@ -6,16 +6,15 @@ import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.VaadinSession;
-
-import javax.annotation.security.PermitAll;
+import org.vaadin.example.security.Auth0Session;
 
 @Route("logout")
-@PermitAll
 public class LogoutView extends Div implements BeforeEnterObserver {
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
         VaadinSession.getCurrent().getSession().invalidate();
-        UI.getCurrent().getPage().setLocation("window.location.href=''");
+        Auth0Session.getCurrent().logout();
+        UI.getCurrent().getPage().setLocation("");
     }
 }

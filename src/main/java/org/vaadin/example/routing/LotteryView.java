@@ -37,7 +37,7 @@ public class LotteryView extends Composite<VerticalLayout> implements HasCompone
 					final Integer number = Integer.parseInt(value);
 
 					if (! validate(number)){
-						lotteryResult.setText(ErrorView.ERROR_TEXT);
+						lotteryResult.setText(LotteryErrorView.ERROR_TEXT);
 					} else {
 						updateContent(number);
 					}

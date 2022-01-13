@@ -9,11 +9,10 @@ import javax.annotation.security.PermitAll;
 
 @ParentLayout(MainView.class)
 @PermitAll
-//@Route(value="error", layout = MainLayout.class)
-public class ErrorView extends Div  implements HasErrorParameter<InvalidLotteryException> {
+public class LotteryErrorView extends Div  implements HasErrorParameter<InvalidLotteryException> {
 
     public static final String ERROR_TEXT = "Ooops, seems it's an invalid number";
-    public ErrorView() {
+    public LotteryErrorView() {
         setText(ERROR_TEXT);
     }
 

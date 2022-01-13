@@ -2,16 +2,15 @@ package org.vaadin.example.routing;
 
 
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.ErrorParameter;
-import com.vaadin.flow.router.HasErrorParameter;
-import com.vaadin.flow.router.ParentLayout;
+import com.vaadin.flow.router.*;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.vaadin.example.MainView;
 
+import javax.annotation.security.PermitAll;
 import java.nio.file.AccessDeniedException;
 
-@ParentLayout(MainView.class)
-//@Route(value="error", layout = MainLayout.class)
+@AnonymousAllowed
+@Route(value="error", layout = MainView.class)
 public class InvalidAccessErrorView extends Div  implements HasErrorParameter<AccessDeniedException> {
 
     public static final String ERROR_TEXT = "Must Login first.";
@@ -26,10 +25,4 @@ public class InvalidAccessErrorView extends Div  implements HasErrorParameter<Ac
     }
 
 
-//
-//    @Override
-//    public int setErrorParameter(BeforeEnterEvent beforeEnterEvent, ErrorParameter<RuntimeException> errorParameter) {
-//        setText("Ooops, seems it's an invalid number");
-//        return 500;
-//    }
 }

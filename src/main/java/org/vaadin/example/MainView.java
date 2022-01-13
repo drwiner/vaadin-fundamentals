@@ -9,37 +9,28 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
-import com.vaadin.flow.server.VaadinSession;
-import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.vaadin.example.databind.BindingForms;
 import org.vaadin.example.databind.Validation;
 import org.vaadin.example.datagrid.BackEndDataProvider;
 import org.vaadin.example.datagrid.FilteringDataProvider;
 import org.vaadin.example.routing.HomeView;
-import org.vaadin.example.routing.LoginView;
 import org.vaadin.example.routing.LogoutView;
 import org.vaadin.example.routing.LotteryView;
-import org.vaadin.example.security.SecurityService;
+import org.vaadin.example.security.Auth0LoginView;
+import org.vaadin.example.security.Auth0Session;
 import org.vaadin.example.styling.GridStylingView;
 
-import javax.annotation.security.PermitAll;
-
-//@Route("")// this is commented out to allow a router link class to be default (route alias)
-//@Route
-//@AnonymousAllowed
 public class MainView extends AppLayout implements HasComponents, RouterLayout, BeforeEnterObserver {
 
-    private final SecurityService securityService;
 
-    public MainView(SecurityService securityService) {
-        this.securityService = securityService;
+    public MainView() {
         createHeader();
         createDrawer();
     }
 
     public void createHeader(){
 
-        Button logout = new Button("Log out", e -> securityService.logout());
+        Button logout = new Button("Log out", e -> Auth0Session.getCurrent().logout());
 
         H2 logo = new H2("Vaadin App");
         logo.addClassNames("text-l", "m-m");
@@ -75,9 +66,8 @@ public class MainView extends AppLayout implements HasComponents, RouterLayout, 
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
-        if (VaadinSession.getCurrent().getAttribute("userLoggedIn") == null) {
-            VaadinSession.getCurrent().setAttribute("intendedPath", event.getLocation().getPath());
-            event.rerouteTo(LoginView.class);
+        if (!Auth0Session.getCurrent().isLoggedIn()){
+            event.rerouteTo(Auth0LoginView.class);
         }
     }
 }
