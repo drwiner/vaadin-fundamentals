@@ -1,13 +1,16 @@
-# Vaadin Tutorial Solutions for Vaadin 22
+# Vaadin Sample App for Vaadin 22
 
-This project is the solutions to the Vaadin 14 tutorials adapted to run in Vaadin 22 environment, then pushed to Google Cloud Platform
+This project is the combined solutions to the Vaadin 14 with Spring-Boot tutorials adapted to run in Vaadin 22 environment and added Auth0 universal login.
 
-Then added Auth0 credentials, (use auth-default.properties and `mv` to auth0.properties).
+To use Auth0 universal login, see auth-default.properties and `cp` to auth0.properties.
 
-- Auth0LoginView.class delegates to Auth0 universal login.
+### Login View Options
+- Auth0LoginView.class delegates to Auth0 universal login with Vaadin Spring Servlet
 - LoginView does VaadinSession Login and has sample user tokens.
 
 Run with `mvn spring-boot:run`
+
+# Production
 
 To prepare for production:
 `mvn install -Pproduction`
@@ -22,6 +25,8 @@ Then dockerize
 Test it locally on port 8080
 
 `docker run -ti -p 8090:8080 vaadin-docker`
+
+# Production to Google Cloud
 
 Tag image with registry name for Google Cloud Run (GCR) project Id
 
