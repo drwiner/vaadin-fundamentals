@@ -24,3 +24,5 @@ error-screenshots/
 frontend/generated/
 
 webpack.generated.js
+
+src/main/resources/auth0.properties
