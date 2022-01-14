@@ -8,6 +8,8 @@ To use Auth0 universal login, see auth-default.properties and `cp` to auth0.prop
 - Auth0LoginView.class delegates to Auth0 universal login with Vaadin Spring Servlet
 - LoginView does VaadinSession Login and has sample user tokens.
 
+First time: `mvn clean compile install`
+
 Run with `mvn spring-boot:run`
 
 # Production
